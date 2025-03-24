@@ -45,7 +45,7 @@ describe('User API', () => {
         email: 'test@example.com',
         password: await bcrypt.hash('password123', 10),
       }
-      const token = 'mockedToken'
+      // const token = 'mockedToken'
 
       prismaMock.user.findUnique.mockResolvedValue(user)
 
@@ -56,8 +56,9 @@ describe('User API', () => {
 
       expect(response.status).toBe(200)
       expect(response.body).toEqual({
-        token,
-        message: 'Connexion réussie',
+        message: 'Login successful',
+        token: 'mockedToken',
+        user: { email: 'test@example.com', id: 1 },
       })
     })
 
@@ -71,7 +72,7 @@ describe('User API', () => {
 
       expect(response.status).toBe(401)
       expect(response.body).toEqual({
-        error: 'Email incorrect',
+        error: 'Email not found',
       })
     })
 
@@ -91,7 +92,7 @@ describe('User API', () => {
 
       expect(response.status).toBe(401)
       expect(response.body).toEqual({
-        error: 'Mot de passe incorrect',
+        error: 'Invalid password',
       })
     })
 
@@ -105,7 +106,7 @@ describe('User API', () => {
 
       expect(response.status).toBe(500)
       expect(response.body).toEqual({
-        error: 'Une erreur est survenue',
+        error: 'Failed to login',
       })
     })
   })
