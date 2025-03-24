@@ -24,7 +24,7 @@
     "url": "git+https://github.com/keylian15/template_api_node.git"
   },
   "keywords": [],
-  "author": "Turbé Keylian ",
+  "author": "Turbé Keylian",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vfourny/nodejs-pokedex-api/issues"
