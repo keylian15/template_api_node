@@ -14,7 +14,6 @@
     "db:studio": "prisma studio",
     "test": "jest --runInBand",
     "test:coverage": "jest --coverage --runInBand",
-    "postinstall": "npm run db:reset",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
