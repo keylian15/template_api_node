@@ -15,6 +15,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setting up Node
         uses: actions/setup-node@v4
